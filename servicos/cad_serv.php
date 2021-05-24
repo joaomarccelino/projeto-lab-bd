@@ -20,16 +20,16 @@
         }
     ?>
     <p><h1> Serviço - Inclusão </h1></p>
-    <form action="inc_cat.php" method="POST">
-        <p>Serviço: <input type="text" size="30" name="categoria" required>
+    <form action="inc_serv.php" method="POST">
+        <p>Serviço: <input type="text" size="30" name="servico" required>
         <p><label for="">Selecione uma Categoria</label>
-        <select>
+        <select name="id_categoria">
         <option>Selecione...</option>        
             <?php                 
                 include('../connection.php');
-                $query = 'SELECT * FROM categoria ORDER BY categoria;';
+                $query = 'SELECT * FROM categoria ORDER BY id_categoria;';
                 $result = mysqli_query ($con, $query) or die (mysqli_connect_error());
-                while($cat = mysql_fetch_array($result)) { 
+                while($cat = mysqli_fetch_array($result)) { 
             ?>
             <option value="<?php echo $cat['id_categoria'] ?>"><?php echo $cat['categoria'] ?></option>
             <?php 
