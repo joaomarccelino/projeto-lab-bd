@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Clientes</title>
+    <title>Cadastro de Prestadores de Serviços</title>
 </head>
 <body>
     <?php
@@ -19,15 +19,11 @@
             unset($_SESSION['msg']);
         }
     ?>
-    <p><h1> Cliente - Inclusão </h1></p>
-    <form action="inc_cli.php" method="POST">
+    <p><h1> Prestador - Inclusão </h1></p>
+    <form action="inc_prest.php" method="POST">
             <table width="80%">                
                 <tr>
                     <td> Nome: </td><td><input type="text" size="80" name="nome" ></td>
-                </tr>
-                <tr>    
-                    <td> RG: </td><td><input type="text" size="20" name="rg" ></td>
-                    <td> CPF: </td><td><input type="text" size="20" name="cpf" ></td>                       
                 </tr>
                 <tr>
                     <td> E-mail: </td><td><input type="text" size="30" name="email" ></td>                     
@@ -55,7 +51,7 @@
             <fieldset><legend> Contato </legend>
                 <table width="100%">
                     <tr>
-                        <td> Telefone: </td><td><input type="tel" placeholder="(XX) XXXX-XXXX" name="telefone_fixo"></td>
+                        <td> Telefone: </td><td><input type="tel" placeholder="(XX) XXXX-XXXX" name="telefone"></td>
                         <td> Celular: </td><td><input type="tel" placeholder="(XX) XXXXX-XXXX" name="celular"></td>
                     </tr>
                 </table>
