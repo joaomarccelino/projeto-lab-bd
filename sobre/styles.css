@@ -12,12 +12,8 @@
 body {
   width: 100%;
   height: 100%;
-  background: #999888;
+  background: #b7b5b0;
   font-family: Montserrat, sans-serif;
-}
-
-#page-home {
-  background-color: rgba(255, 229, 230, 0.32);
 }
 
 #page-home .content {
@@ -156,19 +152,23 @@ main .images-trio {
 }
 
 main .img-trio {
-  flex: 1;
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 48px auto;
   background-size: cover;
   background-position: center;
 }
 
 main .img-trio:nth-child(1) {
-  background-image: url("https://img.ibxk.com.br/2017/06/22/22100428046161.jpg?w=1200&h=675&mode=crop&scale=both");
+  background-image: url("/projeto-lab-bd/assets/images/jordana.jpg");
 }
 main .img-trio:nth-child(2) {
-  background-image: url("https://img.ibxk.com.br/2017/06/22/22100428046161.jpg?w=1200&h=675&mode=crop&scale=both");
+  background-image: url("/projeto-lab-bd/assets/images/joao.jpeg");
 }
 main .img-trio:nth-child(3) {
-  background-image: url("https://img.ibxk.com.br/2017/06/22/22100428046161.jpg?w=1200&h=675&mode=crop&scale=both");
+  background-image: url("/projeto-lab-bd/assets/images/chico.jpeg");
 }
 
 @media (max-width: 900px) {
