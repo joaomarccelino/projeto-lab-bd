@@ -18,7 +18,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
         serviços</title>
 </head>
 
-<body>
+<body style="background-color: #fafafa;">
     <?php
     if (isset($_SESSION['msg'])) {
         echo $_SESSION['msg'];
