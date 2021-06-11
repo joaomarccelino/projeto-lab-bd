@@ -1,20 +1,26 @@
 <?php
 session_start();
-include_once("conection.php");
+include_once("../connection.php");
 
-$id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
-$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
+$id_categoria = filter_input(INPUT_POST, 'id_categoria', FILTER_SANITIZE_NUMBER_INT);
+$categoria = filter_input(INPUT_POST, 'categoria', FILTER_SANITIZE_STRING);
 
-$result= "UPDATE tbespecialidade SET descricao='$nome' WHERE id='$id'";
-$resultado= mysqli_query($con, $result);
-
-
-if(mysqli_affected_rows($con)){
-	$_SESSION['msg'] = "<p style='color:green;'>Especialidade alterada com sucesso</p>";
-	header("Location: index.php");
-}else{
-	$_SESSION['msg'] = "<p style='color:red;'>Especialidade não foi alterada</p>";
-	header("Location: edit_esp.php?id=$id");
+$verif="SELECT * FROM servicos WHERE id_categoria='$id_categoria'";
+$resu= mysqli_query($con, $verif);
+if (mysqli_affected_rows($con)) {
+	$_SESSION['msg'] = "<p style='color:green;'>Esta categoria não pode ser excluída, pois está vinculada a um ou mais serviços.</p>";
+	header("Location: consulta_cat.php");
+} else {
+	$result= "DELETE FROM categoria WHERE id_categoria='$id_categoria'";
+	$resultado= mysqli_query($con, $result);
+	if(mysqli_affected_rows($con)){
+		$_SESSION['msg'] = "<p style='color:green;'>Categoria excluida com sucesso</p>";
+		header("Location: consulta_cat.php");
+	}else{
+		$_SESSION['msg'] = "<p style='color:red;'>Categoria não foi excluida</p>";
+		header("Location: del_cat.php?id_categoria=$id_categoria");
+	}
 }
+
 
 ?>

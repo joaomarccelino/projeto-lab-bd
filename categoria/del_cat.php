@@ -1,8 +1,8 @@
 <?php
 session_start();
-include_once("conection.php");
-$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-$result = "SELECT * FROM tbespecialidade WHERE id = '$id'";
+include_once("../connection.php");
+$id_categoria = filter_input(INPUT_GET, 'id_categoria', FILTER_SANITIZE_NUMBER_INT);
+$result = "SELECT * FROM categoria WHERE id_categoria = '$id_categoria'";
 $resultado = mysqli_query($con, $result);
 $row = mysqli_fetch_assoc($resultado);
 ?>
@@ -13,20 +13,20 @@ $row = mysqli_fetch_assoc($resultado);
 		<title>CRUD - Excluir</title>		
 	</head>
 	<body>
-		<!--a href="inc_esp.php">Cadastrar</a><br-->
-		<a href="index_esp.php">Listar</a><br>
-		<h1>Excluir Especialidade</h1>
+		<a href="inc_cat.php">Cadastrar</a><br>
+		<a href="consulta_cat.php">Listar</a><br>
+		<h1>Excluir Categoria</h1>
 		<?php
 		if(isset($_SESSION['msg'])){
 			echo $_SESSION['msg'];
 			unset($_SESSION['msg']);
 		}
 		?>
-		<form method="POST" action="proc_del_esp.php">
-			<input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+		<form method="POST" action="proc_del_cat.php">
+			<input type="hidden" name="id_categoria" value="<?php echo $row['id_categoria']; ?>">
 			
 			<label>Especialidade: </label>
-			<input type="text" name="nome" placeholder="Digite a especialidade" value="<?php echo $row['descricao']; ?>"><br><br>
+			<input type="text" name="categoria" placeholder="Digite a categoria" value="<?php echo $row['categoria']; ?>"><br><br>
 						
 			<input type="submit" value="Confirma exclusão">
 		</form>
