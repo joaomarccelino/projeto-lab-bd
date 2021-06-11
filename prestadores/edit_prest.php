@@ -1,8 +1,8 @@
 <?php
 session_start();
 include_once("../connection.php");
-$id_cliente = filter_input(INPUT_GET, 'id_cliente', FILTER_SANITIZE_NUMBER_INT);
-$result = "SELECT * FROM clientes WHERE id_cliente = '$id_cliente'";
+$id_prestador = filter_input(INPUT_GET, 'id_prestador', FILTER_SANITIZE_NUMBER_INT);
+$result = "SELECT * FROM prestadores WHERE id_prestador = '$id_prestador'";
 $resultado = mysqli_query($con, $result);
 $row = mysqli_fetch_assoc($resultado);
 ?>
@@ -16,8 +16,8 @@ $row = mysqli_fetch_assoc($resultado);
 		<title>CRUD - Editar</title>		
 	</head>
 	<body>
-		<a href="cad_cli.php">Cadastrar</a><br>
-		<a href="consulta_cli.php">Listar</a><br>
+		<a href="cad_prest.php">Cadastrar</a><br>
+		<a href="consulta_prest.php">Listar</a><br>
 		<h1>Alteração - Cliente</h1>
 		<?php
 		if(isset($_SESSION['msg'])){
@@ -26,8 +26,8 @@ $row = mysqli_fetch_assoc($resultado);
 		}
 		?>
 		<form method="POST" action="proc_edit_cli.php">
-			<input type="hidden" name="id_cliente" value="<?php echo $row['id_cliente']; ?>">			
-            <legend style="color: #470283; margin-bottom: 24px; ">  </legend>
+			<input type="hidden" name="id_prestador" value="<?php echo $row['id_prestador']; ?>">			
+            <legend style="color: #470283; margin-bottom: 24px;"> Dados </legend>
             <div class="row">
                 <div>
                     <div class="form-floating mb-3">
@@ -38,29 +38,12 @@ $row = mysqli_fetch_assoc($resultado);
                 </div>
                 <div>
                     <div class="form-floating mb-3">
-                        <input required size="30" type="text" class="form-control input-sm" id="email" name="email" placeholder="Jordana Momberg" value="<?php echo $row['email']; ?>">
+                        <input required size="30" type="email" class="form-control input-sm" id="email" name="email" placeholder="Jordana Momberg" value="<?php echo $row['email']; ?>">
                         <label for="email">E-mail</label>
                     </div>
                 </div>
 
-
-                <div class="col-6">
-                    <div class="form-floating mb-3">
-                        <input required size="80" type="text" class="form-control input-sm" id="cpf" name="cpf" placeholder="Jordana Momberg" value="<?php echo $row['cpf_cnpj']; ?>">
-                        <label for="cpf">CPF</label>
-                    </div>
-
-                </div>
-                <div class="col-6">
-                    <div class="form-floating mb-3">
-                        <input required size="30" type="text" class="form-control input-sm" id="rg" name="rg" placeholder="Jordana Momberg" value="<?php echo $row['rg']; ?>">
-                        <label for="rg">RG</label>
-                    </div>
-                </div>
-
-
             </div>
-
             <fieldset>
                 <legend style="color: #470283; margin-bottom: 24px; margin-top: 40px"> Endereço </legend>
                 <div class="row">
@@ -124,8 +107,8 @@ $row = mysqli_fetch_assoc($resultado);
                 <div class="row">
                     <div class="col-6">
                         <div class="form-floating mb-3">
-                            <input required size="80" type="tel" class="form-control input-sm" id="telefone_fixo" name="telefone_fixo" placeholder="Jordana Momberg" value="<?php echo $row['telefone_fixo']; ?>">
-                            <label for="telefone_fixo">Telefone</label>
+                            <input required size="80" type="tel" class="form-control input-sm" id="telefone" name="telefone" placeholder="Jordana Momberg" value="<?php echo $row['telefone']; ?>">
+                            <label for="telefone">Telefone</label>
                         </div>
                     </div>
 
@@ -139,8 +122,8 @@ $row = mysqli_fetch_assoc($resultado);
             </fieldset>
 
             <div style="display: flex;align-items: center;justify-content: center; margin-top: 60px">
-                <button type="submit" class="btn btn-primary" style="margin-right: 24px;">Alterar</button>
-                <button type="reset" class="btn btn-secondary">Limpar campos</button>
+                <input type="submit" name="cadastrar" value="Cadastrar" style="color: #fff; background-color: #470283; padding: 6px 12px; border-radius: 4px; border:0; margin-right: 24px">
+                <button type="reset"  class="btn btn-secondary">Limpar campos</button>
             </div>
         </form>
 	</body>

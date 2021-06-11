@@ -55,8 +55,8 @@ include_once("../connection.php");
                 echo "<tr><th>" . $cli['id_cliente'] . "</th><td> ";
                 echo $cli['nome'] . "</td><td>" . $cli['rg'] . "</td><td>" . $cli['cpf_cnpj'] . "</td><td>" . $cli['logradouro'] . "</td><td>" . $cli['numero'] . "</td><td>";
                 echo $cli['complemento'] . "</td><td>" . $cli['bairro'] . "</td><td>" . $cli['cep'] . "</td><td>";
-                echo $cli['cidade'] . "</td><td>" . $cli['estado'] . "</td><td>" . $cli['telefone_fixo'] . "</td><td>" . $cli['celular'] . "</td><td>" . $cli['email'] . "</td><td><a href='edit_cli.php?id_servico=" . $cli['id_cliente'] . "'>Editar</a>";
-                echo " <a href='del_cli.php?id_servico=" . $cli['id_cliente'] . "'  style='color:#d32f2f; margin-left: 24px'>Excluir </a></td></tr>";
+                echo $cli['cidade'] . "</td><td>" . $cli['estado'] . "</td><td>" . $cli['telefone_fixo'] . "</td><td>" . $cli['celular'] . "</td><td>" . $cli['email'] . "</td><td><a href='edit_cli.php?id_cliente=" . $cli['id_cliente'] . "'>Editar</a>";
+                echo " <a href='del_cli.php?id_cliente=" . $cli['id_cliente'] . "'  style='color:#d32f2f; margin-left: 24px'>Excluir </a></td></tr>";
             }
             ?>
         </table>

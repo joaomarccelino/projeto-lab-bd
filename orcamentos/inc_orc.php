@@ -31,7 +31,7 @@ if ($cadastrar) {
         $observacao = $_POST["observacao"];
 
 
-        $query = "INSERT INTO orcamentos (data, valor, id_prestador, id_servico, id_cliente, data_expiracao, observacao) VALUES ('$data', '$valor', '$id_prestador', '$id_servico', '$id_cliente', '$data_expiracao', '$observacao')";
+        $query = "INSERT INTO orcamentos (data_inicio, valor, id_prestador, id_servico, id_cliente, data_expiracao, observacao) VALUES ('$data', '$valor', '$id_prestador', '$id_servico', '$id_cliente', '$data_expiracao', '$observacao')";
         $resu = mysqli_query($con, $query);
         if (mysqli_insert_id($con)) {
             print "<div style='color: #32cd32; display: flex; align-items:center; margin-bottom: 12px'>

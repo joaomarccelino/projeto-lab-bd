@@ -42,7 +42,7 @@ include_once("../connection.php");
             while ($cat = mysqli_fetch_assoc($resultado)) {
                 echo "<tr><td>" . $cat['id_categoria'] . "</td><td> ";
                 echo $cat['categoria'] . "</td><td><a href='edit_cat.php?id_categoria=" . $cat['id_categoria'] . "'>Editar</a>";
-                echo " <a href='del_serv.php?id_categoria=" . $cat['id_categoria'] . "' style='color:#d32f2f; margin-left: 24px'>Excluir </a></td></tr>";
+                echo " <a href='del_cat.php?id_categoria=" . $cat['id_categoria'] . "' style='color:#d32f2f; margin-left: 24px'>Excluir </a></td></tr>";
             }
             ?>
         </table>

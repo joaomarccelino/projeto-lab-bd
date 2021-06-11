@@ -50,7 +50,7 @@ include_once("../connection.php");
                 echo $prest['nome'] . "</td><td>"  . $prest['logradouro'] . "</td><td>" . $prest['numero'] . "</td><td>";
                 echo $prest['complemento'] . "</td><td>" . $prest['bairro'] . "</td><td>" . $prest['cep'] . "</td><td>";
                 echo $prest['cidade'] . "</td><td>" . $prest['estado'] . "</td><td>" . $prest['telefone'] . "</td><td>" . $prest['email'] . "</td><td><a href='edit_prest.php?id_prestador=" . $prest['id_prestador'] . "'>Editar</a>";
-                echo "<a href='del_cli.php?id_prestador=" . $prest['id_prestador'] . "' style='color:#d32f2f; margin-left: 24px'>Excluir </a></td></tr>";
+                echo "<a href='del_prest.php?id_prestador=" . $prest['id_prestador'] . "' style='color:#d32f2f; margin-left: 24px'>Excluir </a></td></tr>";
             }
             ?>
         </table>

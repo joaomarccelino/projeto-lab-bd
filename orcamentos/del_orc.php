@@ -1,8 +1,8 @@
 <?php
 session_start();
 include_once("../connection.php");
-$id_categoria = filter_input(INPUT_GET, 'id_categoria', FILTER_SANITIZE_NUMBER_INT);
-$result = "SELECT * FROM categoria WHERE id_categoria = '$id_categoria'";
+$id_orcamento = filter_input(INPUT_GET, 'id_orcamento', FILTER_SANITIZE_NUMBER_INT);
+$result = "SELECT * FROM orcamentos WHERE id_orcamento = '$id_orcamento'";
 $resultado = mysqli_query($con, $result);
 $row = mysqli_fetch_assoc($resultado);
 ?>
@@ -15,18 +15,18 @@ $row = mysqli_fetch_assoc($resultado);
 	<body>
 		<a href="inc_cat.php">Cadastrar</a><br>
 		<a href="consulta_cat.php">Listar</a><br>
-		<h1>Excluir Categoria</h1>
+		<h1>Excluir Orçamento</h1>
 		<?php
 		if(isset($_SESSION['msg'])){
 			echo $_SESSION['msg'];
 			unset($_SESSION['msg']);
 		}
 		?>
-		<form method="POST" action="proc_del_cat.php">
-			<input type="hidden" name="id_categoria" value="<?php echo $row['id_categoria']; ?>">
+		<form method="POST" action="proc_del_orc.php">
+			<input type="hidden" name="id_orcamento" value="<?php echo $row['id_orcamento']; ?>">
 			
-			<label>Categoria: </label>
-			<input type="text" name="categoria" placeholder="Digite a categoria" value="<?php echo $row['categoria']; ?>"><br><br>
+			<label>Data de Início: </label>
+			<input type="date" name="data" value="<?php echo $row['data_inicio']; ?>"><br><br>
 						
 			<input type="submit" value="Confirma exclusão">
 		</form>
