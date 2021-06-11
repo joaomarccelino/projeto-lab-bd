@@ -13,7 +13,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="icon" href="/projeto-lab-bd/assets/images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/projeto-lab-bd/assets/favicon.png" type="image/x-icon" />
 
     <title> Momberg Soluções - Itapetininga, São Miguel Arcanjo - Prestadores de
         serviços</title>
@@ -39,8 +39,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
             <div class="row">
                 <div class="col-6">
                     <div class="form-floating mb-3">
-                        <input required size="80" type="date" class="form-control input-sm" id="data_inicio" name="data_inicio" placeholder="Jordana Momberg">
-                        <label for="data_inicio">Data do serviço</label>
+                        <input required size="80" type="date" class="form-control input-sm" id="data" name="data" placeholder="Jordana Momberg">
+                        <label for="data">Data do serviço</label>
                     </div>
 
                 </div>
@@ -123,7 +123,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     </div>
 
     <div style="display: flex;align-items: center;justify-content: center; margin-top: 60px">
-        <button type="submit" class="btn btn-primary" style="margin-right: 24px;">Cadastrar</button>
+        <input type="submit" name="cadastrar" value="Cadastrar" style="color: #fff; background-color: #470283; padding: 6px 12px; border-radius: 4px; border:0; margin-right: 24px">
         <button type="reset" class="btn btn-secondary">Limpar campos</button>
     </div>
     </form>
