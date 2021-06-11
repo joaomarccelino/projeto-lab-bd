@@ -43,11 +43,11 @@ include_once("../connection.php");
                 echo $_SESSION['msg'];
                 unset($_SESSION['msg']);
             }
-            $result_orc = "SELECT o.id_orcamento, o.data_inicio, o.valor, o.data_expiracao, o.observacao, p.nome, s.servico, c.nome AS nome_cliente FROM orcamentos AS o, prestadores AS p, servicos AS s, clientes AS c WHERE o.id_prestador = p.id_prestador AND o.id_servico = s.id_servico AND o.id_cliente = c.id_cliente";
+            $result_orc = "SELECT o.id_orcamento, o.data, o.valor, o.data_expiracao, o.observacao, p.nome, s.servico, c.nome AS nome_cliente FROM orcamentos AS o, prestadores AS p, servicos AS s, clientes AS c WHERE o.id_prestador = p.id_prestador AND o.id_servico = s.id_servico AND o.id_cliente = c.id_cliente";
             $resultado_orc = mysqli_query($con, $result_orc);
             while ($orc = mysqli_fetch_assoc($resultado_orc)) {
                 echo "<tr><th>" . $orc['id_orcamento'] . "</th><th> ";
-                echo $orc['data_inicio'] . "</th><th>"  . $orc['valor'] . "</th><td>" . $orc['data_expiracao'] . "</td><td>";
+                echo $orc['data'] . "</th><th>"  . $orc['valor'] . "</th><td>" . $orc['data_expiracao'] . "</td><td>";
                 echo $orc['nome_cliente'] . "</td><td>" . $orc['servico'] . "</td><td>" . $orc['nome'] . "</td><td>";
                 echo $orc['observacao'] . "</td><td><a href='edit_prest.php?id_orcamento=" . $orc['id_orcamento'] . "'>Editar</a>";
                 echo "<a href='del_cli.php?id_orcamento=" . $orc['id_orcamento'] . "' style='color:#d32f2f; margin-left: 24px'>Excluir </a></td></tr>";

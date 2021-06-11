@@ -55,7 +55,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 
                 <div class="col-6">
                     <div class="form-floating mb-3">
-                        <input required size="80" type="text" class="form-control input-sm" id="cpf" name="cpf" placeholder="Jordana Momberg">
+                        <input required size="80" type="text" class="form-control input-sm" id="cpf" name="cpf_cnpj" placeholder="Jordana Momberg">
                         <label for="cpf">CPF</label>
                     </div>
 
@@ -148,7 +148,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
             </fieldset>
 
             <div style="display: flex;align-items: center;justify-content: center; margin-top: 60px">
-                <button type="submit" class="btn btn-primary" style="margin-right: 24px;">Cadastrar</button>
+                <input type="submit" name="cadastrar" value="Cadastrar" style="color: #fff; background-color: #470283; padding: 6px 12px; border-radius: 4px; border:0; margin-right: 24px">
                 <button type="reset" class="btn btn-secondary">Limpar campos</button>
             </div>
         </form>
