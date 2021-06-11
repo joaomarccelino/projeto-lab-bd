@@ -19,7 +19,7 @@
     </form>
     <br>
     <div style="display: flex;align-items: center;justify-content: space-between">
-            <a href="../main.html">← Voltar</a>
+            <a href="../main.php">← Voltar</a>
         </div>
     <table border="1" width="100%" class="table  table-striped" style="margin: 40px 0 60px 0; ">
             <thead>

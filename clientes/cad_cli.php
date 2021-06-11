@@ -1,9 +1,10 @@
 <?php
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
-}
+    if (!isset($_SESSION)) session_start();
+    if (!isset($_SESSION['login'])) {
+        session_destroy();
+        header("Location: ../login/index.php"); 
+    }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +31,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 
         <div style="display: flex;align-items: center;justify-content: space-between; margin-bottom: 40px">
             <h1>Adicionar clientes </h1>
-            <a href="../main.html">← Voltar</a>
+            <a href="../main.php">← Voltar</a>
         </div>
 
 

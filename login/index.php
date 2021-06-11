@@ -36,15 +36,15 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
             />
           </div>
 
-        <form action="inc_orc.php" method="POST">
+        <form action="login.php" method="POST">
 
 
             <div class="row">
 
                 <div>
                     <div class="form-floating mb-3">
-                        <input required size="80" type="email" class="form-control input-sm" id="email" name="email" placeholder="Jordana Momberg">
-                        <label for="email">Email</label>
+                        <input required size="80" type="login" class="form-control input-sm" id="login" name="login" placeholder="Jordana Momberg">
+                        <label for="login">Email</label>
                     </div>
 
                 </div>
@@ -60,7 +60,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 
             <div style="display: flex;align-items: center;justify-content: center; margin-top: 60px">
 
-                <button type="submit" style="background-color: #000; border: 0; 
+                <button type="submit" id="entrar" name ="entrar" style="background-color: #000; border: 0; 
                 border-radius: 6px;color: #fff; padding:8px 32px; font-family: Montserrat, sans-serif">Entrar</button>
             </div>
         </form>

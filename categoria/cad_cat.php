@@ -1,7 +1,9 @@
 <?php
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
-}
+    if (!isset($_SESSION)) session_start();
+    $nivel_necessario = 'adm';
+    if (!isset($_SESSION['login']) OR ($_SESSION['tipo'] != $nivel_necessario)) {
+        header("Location: ../main.php"); 
+    }
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +32,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 
         <div style="display: flex;align-items: center;justify-content: space-between;margin-bottom: 40px">
             <h1> Adicionar categoria </h1>
-            <a href="../main.html">← Voltar</a>
+            <a href="../main.php">← Voltar</a>
         </div>
 
         

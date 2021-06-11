@@ -1,6 +1,10 @@
 <?php
-session_start();
-include_once("../connection.php");
+    if (!isset($_SESSION)) session_start();
+    $nivel_necessario = 'adm';
+    if (!isset($_SESSION['login']) OR ($_SESSION['tipo'] != $nivel_necessario)) {
+        header("Location: ../main.php"); 
+    }
+    include_once("../connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,7 +25,7 @@ include_once("../connection.php");
 
         <div style="display: flex;align-items: center;justify-content: space-between">
             <h1>Serviços </h1>
-            <a href="../main.html">← Voltar</a>
+            <a href="../main.php">← Voltar</a>
         </div>
 
         <table border="1" width="100%" class="table  table-striped" style="margin: 40px 0 60px 0; ">
