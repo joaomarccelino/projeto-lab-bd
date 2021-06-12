@@ -37,7 +37,7 @@
         $result = mysqli_query($con, $query);
         while($serv = mysqli_fetch_assoc($result)) {
             echo "<tr><td>" . $serv['id_servico'] . "</td><td> ";
-            echo $serv['servico'] . "</td><td>" . $serv['servico'] . "</td>";
+            echo $serv['servico'] . "</td><td>" . $serv['categoria'] . "</td>";
         }       
     }
     ?>

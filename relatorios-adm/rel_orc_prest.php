@@ -18,8 +18,21 @@
 <body>
     <h1>Pesquisar Orçamentos</h1>
     <form action="" method="post">
-        <label>Nome do Prestador: </label>
-        <input type="text" name="nome">
+        <div>
+            <select required name="nome" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option selected disabled>Selecione um prestador de serviço</option>
+                <?php
+                include('../connection.php');
+                $query = 'SELECT * FROM prestadores ORDER BY id_prestador;';
+                $result = mysqli_query($con, $query) or die(mysqli_connect_error());
+                while ($cat = mysqli_fetch_array($result)) {
+                ?>
+                    <option value="<?php echo $cat['nome'] ?>"><?php echo $cat['nome'] ?></option>
+                <?php
+                }
+                ?>
+            </select>
+        </div>
         <input type="submit" name="searchService" value="Pesquisar">
     </form>
     <br>

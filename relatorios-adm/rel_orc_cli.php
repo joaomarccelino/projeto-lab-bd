@@ -17,10 +17,23 @@
 </head>
 <body>
     <h1>Pesquisar Orçamentos</h1>
-    <form action="" method="post">
-        <label>Nome do Cliente: </label>
-        <input type="text" name="nome_cliente">
-        <input type="submit" name="searchService" value="Pesquisar">
+    <form action="" method="post">        
+        <div>
+            <select required name="nome_cliente" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option selected disabled>Selecione um cliente</option>
+                <?php
+                include('../connection.php');
+                $query = 'SELECT * FROM clientes ORDER BY id_cliente;';
+                $result = mysqli_query($con, $query) or die(mysqli_connect_error());
+                while ($cat = mysqli_fetch_array($result)) {
+                ?>
+                    <option value="<?php echo $cat['nome'] ?>"><?php echo $cat['nome'] ?></option>
+                <?php
+                }
+                ?>
+            </select>
+            <input type="submit" name="searchService" value="Pesquisar">
+        </div>
     </form>
     <br>
     <div style="display: flex;align-items: center;justify-content: space-between">

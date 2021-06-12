@@ -57,7 +57,14 @@
                     <li><a href="prestadores/cad_prest.php">Cadastrar</a></li>
                     <li><a href="prestadores/consulta_prest.php">Consultar</a></li>
                   </ul>
-                </li>                
+                </li>
+                <li>
+                  <a href="#">Prestadores/Serviços</a>
+                  <ul>
+                    <li><a href="prestadores-serv/cad.php">Cadastrar</a></li>
+                    <li><a href="prestadores-serv/consulta.php">Consultar</a></li>
+                  </ul>
+                </li>                  
               <?php }
             ?>         
           

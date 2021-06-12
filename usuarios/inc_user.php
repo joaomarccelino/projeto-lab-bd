@@ -1,10 +1,11 @@
 <?php
 session_start();
+include('../connection.php');
 $login = $_POST['login'];
-$senha = MD5($_POST['senha']);
+$senha = mysqli_real_escape_string($con, $_POST["senha"]);  
+$senha = md5($senha);
 $id_cliente = $_POST['id_cliente'];
 $tipo = $_POST['tipo'];
-include('../connection.php');
 $query_select = "SELECT login FROM login_usuarios WHERE login = '$login'";
 $select = mysqli_query($con,$query_select);
 $array = mysqli_fetch_array($select);

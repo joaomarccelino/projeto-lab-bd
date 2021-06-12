@@ -1,10 +1,12 @@
 <?php 
 session_start();
+include("../connection.php");
 $login = $_POST['login'];
 $entrar = $_POST['entrar'];
-$senha = MD5($_POST['senha']);
+$senha = mysqli_real_escape_string($con, $_POST["senha"]);  
+$senha = md5($senha);
 $tipo;
-include("../connection.php");
+
 if (isset($entrar)) {
     $query="SELECT * FROM login_usuarios WHERE login = '$login' AND senha = '$senha'";
     $sql = mysqli_query($con, $query);
