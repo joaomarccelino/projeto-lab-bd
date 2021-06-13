@@ -1,9 +1,9 @@
 <?php
-    if (!isset($_SESSION)) session_start();
-    $nivel_necessario = 'adm';
-    if (!isset($_SESSION['login']) OR ($_SESSION['tipo'] != $nivel_necessario)) {
-        header("Location: ../main.php"); 
-    }
+if (!isset($_SESSION)) session_start();
+$nivel_necessario = 'adm';
+if (!isset($_SESSION['login']) or ($_SESSION['tipo'] != $nivel_necessario)) {
+    header("Location: ../main.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,8 +62,10 @@
                 <button type="reset" class="btn btn-secondary">Limpar campos</button>
             </div>
         </form>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
 
 </body>
+
 </html>

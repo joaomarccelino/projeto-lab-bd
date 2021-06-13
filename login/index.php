@@ -58,10 +58,14 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 
             </div>
 
-            <div style="display: flex;align-items: center;justify-content: center; margin-top: 60px">
+            <div style="display: flex; flex-direction: column;align-items: center;justify-content: center; margin-top: 60px">
 
                 <button type="submit" id="entrar" name ="entrar" style="background-color: #000; border: 0; 
                 border-radius: 6px;color: #fff; padding:8px 32px; font-family: Montserrat, sans-serif">Entrar</button>
+
+
+
+                <a href="/projeto-lab-bd/HomePage/index.html" style="margin-top:24px">← Voltar</a>
             </div>
         </form>
 

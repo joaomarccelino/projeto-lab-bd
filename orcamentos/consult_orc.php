@@ -53,7 +53,7 @@
                 echo "<tr><th>" . $orc['id_orcamento'] . "</th><th> ";
                 echo $orc['data_inicio'] . "</th><th>"  . $orc['valor'] . "</th><td>" . $orc['data_expiracao'] . "</td><td>";
                 echo $orc['nome_cliente'] . "</td><td>" . $orc['servico'] . "</td><td>" . $orc['nome'] . "</td><td>";
-                echo $orc['observacao'] . "</td><td><a href='edit_orc.php?id_orcamento=" . $orc['id_orcamento'] . "'>Editar</a>";
+                echo $orc['observacao'] . "</td>";
                 echo "<a href='del_orc.php?id_orcamento=" . $orc['id_orcamento'] . "' style='color:#d32f2f; margin-left: 24px'>Excluir </a></td></tr>";
             }
             ?>
