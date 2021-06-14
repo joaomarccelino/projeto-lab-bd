@@ -50,7 +50,7 @@ if (!isset($_SESSION['login'])) {
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <li><a class="dropdown-item" href="categoria/cad_cat.php">Cadastrar</a></li>
-                            <li><a class="dropdown-item" href="categoria/consulta_cat.php">Cadastrar</a></li>
+                            <li><a class="dropdown-item" href="categoria/consulta_cat.php">Consultar</a></li>
                         </ul>
                     </div>
 

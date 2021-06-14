@@ -46,7 +46,7 @@
             $resultado_serv = mysqli_query($con, $result_serv);
             while ($serv = mysqli_fetch_assoc($resultado_serv)) {
                 echo "<tr><td>" . $serv['id_servico'] . "</td><td> ";
-                echo $serv['servico'] . "</td><td>" . $serv['categoria'] . "</td><td><a href='edit_serv.php?id_servico=" . $serv['id_servico'] . "'>Editar</a>";
+                echo $serv['servico'] . "</td><td>" . $serv['categoria'] . "</td><td style='text-align: center;'><a href='edit_serv.php?id_servico=" . $serv['id_servico'] . "'>Editar</a>";
                 echo "<a href='del_serv.php?id_servico=" . $serv['id_servico'] . "' style='color:#d32f2f; margin-left: 24px'>Excluir </a></td></tr>";
             };
             ?>

@@ -18,7 +18,7 @@ $row = mysqli_fetch_assoc($resultado);
 	<body>
 		<a href="cad_prest.php">Cadastrar</a><br>
 		<a href="consulta_prest.php">Listar</a><br>
-		<h1>Alteração - Cliente</h1>
+		<h1>Alteração - Prestador</h1>
 		<?php
 		if(isset($_SESSION['msg'])){
 			echo $_SESSION['msg'];

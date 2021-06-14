@@ -11,6 +11,9 @@ $row = mysqli_fetch_assoc($resultado);
 <html lang="pt-br">
 	<head>
 		<meta charset="utf-8">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+		<link rel="icon" href="/projeto-lab-bd/assets/favicon.png" type="image/x-icon" />
 		<title>CRUD - Excluir</title>		
 	</head>
 	<body>
@@ -24,13 +27,21 @@ $row = mysqli_fetch_assoc($resultado);
 		}
 		?>
 		<form method="POST" action="proc_del.php">
-			<input type="hidden" name="id_servico" value="<?php echo $row['id_servico']; ?>">			
-			<label>Serviço: </label>
-			<input type="text" name="servico" placeholder="Digite o servico" value="<?php echo $row['servico']; ?>"><br><br>
-            <input type="hidden" name="id_prestador" value="<?php echo $row['id_prestador']; ?>">			
-			<label>Prestador: </label>
-			<input type="text" name="prestador" placeholder="Digite o nome" value="<?php echo $row['nome']; ?>"><br><br>						
-			<input type="submit" value="Confirma exclusão">
+			<input type="hidden" name="id_servico" value="<?php echo $row['id_servico']; ?>">	
+			<div class="col-6">	
+				<div class="form-floating mb-3">		
+					<input type="text" name="servico" placeholder="Digite o servico" class="form-control"  value="<?php echo $row['servico']; ?>"><br><br>
+					<label for="servico">Serviço: </label>
+				</div>
+				<input type="hidden" name="id_prestador" value="<?php echo $row['id_prestador']; ?>">	
+				<div class="form-floating mb-3">			
+					<input type="text" name="prestador" placeholder="Digite o nome" class="form-control"  value="<?php echo $row['nome']; ?>"><br><br>	
+					<label for="prestador">Prestador: </label>
+				</div>				
+				<div style="display: flex;align-items: center;justify-content: center; margin-top: 60px">						
+					<input type="submit" class="btn btn-primary" value="Confirma exclusão">
+				</div>
+			</div>
 		</form>
 	</body>
 </html>

@@ -46,7 +46,7 @@
             $resultado_serv = mysqli_query($con, $result_serv);
             while ($serv = mysqli_fetch_assoc($resultado_serv)) {
                 echo "<tr><td>" . $serv['id_servico'] . "</td><td> ";
-                echo $serv['nome'] . "</td><td>" . $serv['servico'] . "</td><td>";
+                echo $serv['nome'] . "</td><td>" . $serv['servico'] . "</td><td style='text-align: center;'>";
                 echo "<a href='del.php?id_servico=" . $serv['id_servico'] . "&id_prestador=" . $serv['id_prestador'] . "' style='color:#d32f2f; margin-left: 24px'>Excluir </a></td></tr>";
             };
             ?>

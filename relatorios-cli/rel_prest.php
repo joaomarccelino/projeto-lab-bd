@@ -26,7 +26,7 @@ include('../connection.php')
             <div class="row">
                 <div>
                     <div class="form-floating mb-3">
-                        <input required size="80" type="text" class="form-control input-sm" id="nome" name="nome" placeholder="Jordana Momberg">
+                        <input size="80" type="text" class="form-control input-sm" id="nome" name="nome" placeholder="Jordana Momberg">
                         <label for="nome">Prestador</label>
                     </div>
                 </div>

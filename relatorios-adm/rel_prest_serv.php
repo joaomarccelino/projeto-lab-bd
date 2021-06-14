@@ -31,8 +31,8 @@ include_once("../connection.php");
             <div class="row">
                 <div>
                     <div class="form-floating mb-3">
-                        <input required size="80" type="text" class="form-control input-sm" id="servico" name="servico" placeholder="Jordana Momberg">
-                        <label for="servico">Prestador</label>
+                        <input size="80" type="text" class="form-control input-sm" id="servico" name="servico" placeholder="Jordana Momberg">
+                        <label for="servico">Serviço</label>
                     </div>
                 </div>
             </div>
