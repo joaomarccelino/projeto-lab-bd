@@ -64,7 +64,7 @@ include_once("../connection.php");
             $searchService = filter_input(INPUT_POST, 'searchService', FILTER_SANITIZE_STRING);
             if ($searchService) {
                 $nome_cliente = filter_input(INPUT_POST, 'nome_cliente', FILTER_SANITIZE_STRING);
-                $query = "SELECT * FROM orcamento_cliente_prestador WHERE nome_cliente LIKE '%$nome_cliente%'  LIMIT 5";
+                $query = "SELECT * FROM orcamento_cliente_prestador WHERE nome_cliente LIKE '%$nome_cliente%' ";
                 $result = mysqli_query($con, $query);
                 while ($orc = mysqli_fetch_assoc($result)) {
                     echo "<tr><th>" . $orc['id_orcamento'] . "</th><th> ";

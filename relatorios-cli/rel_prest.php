@@ -49,7 +49,7 @@ include('../connection.php')
             $searchService = filter_input(INPUT_POST, 'searchService', FILTER_SANITIZE_STRING);
             if ($searchService) {
                 $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
-                $query = "SELECT * FROM prestador_servico WHERE nome LIKE '%$nome%' LIMIT 5";
+                $query = "SELECT * FROM prestador_servico WHERE nome LIKE '%$nome%' ";
                 $result = mysqli_query($con, $query);
                 while ($serv = mysqli_fetch_assoc($result)) {
                     echo "<tr><td>" . $serv['id_prestador'] . "</td><td> ";

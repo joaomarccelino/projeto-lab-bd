@@ -48,7 +48,7 @@ include('../connection.php')
             $searchService = filter_input(INPUT_POST, 'searchService', FILTER_SANITIZE_STRING);
             if ($searchService) {
                 $servico = filter_input(INPUT_POST, 'servico', FILTER_SANITIZE_STRING);
-                $query = "SELECT * FROM servico_categoria WHERE servico LIKE '%$servico%' LIMIT 5";
+                $query = "SELECT * FROM servico_categoria WHERE servico LIKE '%$servico%'";
                 $result = mysqli_query($con, $query);
                 while ($serv = mysqli_fetch_assoc($result)) {
                     echo "<tr><td>" . $serv['id_servico'] . "</td><td> ";

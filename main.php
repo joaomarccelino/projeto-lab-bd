@@ -41,6 +41,7 @@ if (!isset($_SESSION['login'])) {
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <li><a class="dropdown-item" href="usuarios/cad_user.php">Cadastrar</a></li>
+                            <li><a class="dropdown-item" href="usuarios/consulta_user.php">Consultar</a></li>
                         </ul>
                     </div>
 

@@ -69,7 +69,7 @@ include_once("../connection.php");
             if ($searchService) {
                 $data_inicio = $_POST['data_inicio'];
                 $data_expiracao = $_POST['data_expiracao'];
-                $query = "SELECT * FROM orcamento_cliente_prestador WHERE data_inicio >= '$data_inicio' AND data_expiracao <= '$data_expiracao' LIMIT 5";
+                $query = "SELECT * FROM orcamento_cliente_prestador WHERE data_inicio >= '$data_inicio' AND data_expiracao <= '$data_expiracao'";
                 $result = mysqli_query($con, $query);
                 while ($orc = mysqli_fetch_assoc($result)) {
                     echo "<tr><th>" . $orc['id_orcamento'] . "</th><th> ";
